@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santos Bravos | Sitio Oficial</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="text-white">SANTOS</span><span class="text-red">BRAVOS</span>
+      </a>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">Nosotros</a></li>
+        <li><a href="#members" class="nav-link">Integrantes</a></li>
+        <li><a href="#music" class="nav-link">Música</a></li>
+        <li><a href="#tour" class="nav-link">Tour</a></li>
+        <li><a href="#gallery" class="nav-link">Galería</a></li>
+      </ul>
+
+      <a href="#tour" class="btn btn-red btn-nav">Boletos</a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <span class="hero-subtitle">NUEVO SENCILLO DISPONIBLE</span>
+      <h1 class="hero-title">SANTOS <span class="text-red">BRAVOS</span></h1>
+      <p class="hero-description">El nuevo sonido pop latino revolucionando la escena global.</p>
+      
+      <div class="hero-buttons">
+        <a href="#music" class="btn btn-red">
+          <i data-lucide="play-circle"></i> Escuchar Ahora
+        </a>
+        <a href="#tour" class="btn btn-outline">
+          <i data-lucide="ticket"></i> Ver Fechas de Tour
+        </a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Desplazar hacia abajo">
+      <i data-lucide="chevron-down"></i>
+    </a>
+  </header>
+
+  <!-- Sección Sobre la Banda -->
+  <section id="about" class="section about-section">
+    <div class="container grid-2">
+      <div class="about-image-container">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80" alt="Santos Bravos En Vivo" class="about-img">
+        <div class="about-card-badge">
+          <span class="badge-number">HYBE</span>
+          <span class="badge-text">Latin America Project</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">CONOCE A LA BANDA</span>
+        <h2 class="section-title">La energía del pop latino sin fronteras</h2>
+        <p class="paragraph">
+          Santos Bravos es el resultado de una búsqueda internacional de talento, carisma y pasión musical. Uniendo voces únicas de toda Latinoamérica y España bajo la visión innovadora de HYBE.
+        </p>
+        <p class="paragraph">
+          Con ritmos contemporáneos, armonías vocales de alto nivel y coreografías impactantes, Santos Bravos redefine la experiencia del pop en español para una audiencia global.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-num" id="statStream">0M+</span>
+            <span class="stat-label">Reproducciones</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" id="statShows">0</span>
+            <span class="stat-label">Conciertos Sold Out</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" id="statCountries">0</span>
+            <span class="stat-label">Países en Tour</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Integrantes -->
+  <section id="members" class="section members-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">EL TALENTO</span>
+        <h2 class="section-title">Integrantes</h2>
+        <p class="section-desc">Cinco personalidades, una sola voz sobre el escenario.</p>
+      </div>
+
+      <div class="members-grid" id="membersContainer">
+        <!-- Generado dinámicamente con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal para Detalle de Integrante -->
+  <div class="modal" id="memberModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Música & Reproductor -->
+  <section id="music" class="section music-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DISCOGRAFÍA</span>
+        <h2 class="section-title">Escucha lo Último</h2>
+      </div>
+
+      <div class="player-card">
+        <div class="player-left">
+          <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=500&q=80" alt="Portada Álbum" id="playerCover" class="player-cover">
+        </div>
+        <div class="player-right">
+          <div class="track-info">
+            <h3 id="playerTitle" class="track-title">Cielo de Fuego</h3>
+            <p id="playerAlbum" class="track-album">Single - Santos Bravos</p>
+          </div>
+
+          <div class="audio-controls">
+            <div class="time-slider-container">
+              <span id="currentTime">0:00</span>
+              <input type="range" id="seekSlider" value="0" max="100" class="slider">
+              <span id="durationTime">3:25</span>
+            </div>
+
+            <div class="button-controls">
+              <button class="btn-icon" id="prevBtn"><i data-lucide="skip-back"></i></button>
+              <button class="btn-icon btn-play" id="playBtn"><i data-lucide="play"></i></button>
+              <button class="btn-icon" id="nextBtn"><i data-lucide="skip-forward"></i></button>
+            </div>
+          </div>
+
+          <div class="track-list" id="trackList">
+            <!-- Canciones dinámicas -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Tour -->
+  <section id="tour" class="section tour-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">EN VIVO</span>
+        <h2 class="section-title">Próximas Fechas</h2>
+        <p class="section-desc">¡Consigue tus entradas para la gira mundial!</p>
+      </div>
+
+      <div class="tour-list" id="tourList">
+        <!-- Generado dinámicamente -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Galería -->
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">MOMENTOS</span>
+        <h2 class="section-title">Galería</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80" alt="Concierto">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Show Luz">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80" alt="Escenario">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Banda">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Imagen -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg" src="" alt="Ampliada">
+  </div>
+
+  <!-- Newsletter / Fanclub -->
+  <section class="newsletter-section">
+    <div class="container text-center">
+      <i data-lucide="heart" class="heart-icon"></i>
+      <h2 class="newsletter-title">Únete al Fan Club Oficial</h2>
+      <p class="newsletter-desc">Recibe preventas exclusivas, contenido detrás de cámaras y actualizaciones de la banda.</p>
+
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Tu correo electrónico" required class="input-email">
+        <button type="submit" class="btn btn-red">Suscribirme</button>
+      </form>
+      <div id="newsletterMsg" class="newsletter-msg"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="text-white">SANTOS</span><span class="text-red">BRAVOS</span>
+        <p>© 2026 HYBE Latin America. Todos los derechos reservados.</p>
+      </div>
+
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+        <a href="#" aria-label="Twitter / X"><i data-lucide="twitter"></i></a>
+        <a href="#" aria-label="Spotify"><i data-lucide="music"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
